@@ -1,0 +1,70 @@
+features:
+	the program should store my foods with quantity
+		i can add food to database
+		i can get food(s) from database
+		i can delete food from database
+		i can update food
+	the program should store my recipes
+		C
+		R
+		U
+		D
+	the program should store my daily meals
+		C
+		R
+		U
+		D
+	the program should update food quantities after i prepared the meals
+	the program should generate a shopping list with the foods decreased under an alert quantity
+
+server:
+	GET /food 				should return every food records
+	GET /food/<foodId> 			should return food with specified id
+	PUT /food				should insert record into the food table
+	UPDATE /food/<foodId>			should update record with the specific id
+	DELETE /food/<foodId>			should remove record with the specific id
+
+	GET /recipe				should return every record from recipe table
+	GET /recipe/<recipeId>			should return recipe record with the specified id
+	PUT /recipe				should insert record into the recipe table
+	UPDATE /recipe/<recipeId>		should update record with the specified id
+	DELETE /recipe/<recipeId>		should remove record with the specified id
+
+
+ui specifications:
+	pages:
+		foods
+			food list
+			add food button
+			add food form in a modal
+			decrease food quantity button
+		recipes
+			recipe list
+			add recipe button
+			add recipe form in a modal
+			prepare recipe button
+
+database:
+	food table
+		id
+		name
+		quantity
+		unit_id
+		recipe_id
+
+	recipe table
+		id
+		name
+		quantity
+		unit_id
+		instructions
+
+	recipe_ingredient table
+		recipe_id
+		food_id
+		quantity
+		unit_id
+
+	unit table
+		id
+		name
